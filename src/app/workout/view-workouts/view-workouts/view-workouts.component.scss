@@ -1,0 +1,25 @@
+.workouts-container {
+    margin: 20px;
+  }
+  
+  .workouts-container h2 {
+    color: #333;
+  }
+  
+  .workouts-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .workouts-container li {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .workouts-container li h3 {
+    margin-top: 0;
+  }
+  

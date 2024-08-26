@@ -1,0 +1,30 @@
+<h2>Add Workout</h2>
+<form #workoutForm="ngForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Enter title" name="title" [(ngModel)]="workout.title" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Enter description" name="description" [(ngModel)]="workout.description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Workout Type</mat-label>
+    <mat-select name="workoutType" [(ngModel)]="workout.workoutType" required>
+      <mat-option *ngFor="let type of workoutTypes" [value]="type">{{type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date and Time</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="workoutDateTime" [(ngModel)]="workout.workoutDateTime" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+  <button mat-button type="button" (click)="close()">Cancel</button>
+</form>
+

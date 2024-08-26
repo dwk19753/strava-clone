@@ -1,0 +1,20 @@
+<button mat-raised-button color="primary" (click)="openAddWorkoutModal()">Add Workout</button>
+
+<div class="workouts-container">
+    <h2>View Workouts</h2>
+    <div *ngIf="workouts.length === 0">
+      <p>No workouts available.</p>
+    </div>
+    <ul *ngIf="workouts.length > 0">
+      <li *ngFor="let workout of workouts">
+        <h3>{{ workout.title }}</h3>
+        <p>{{ workout.description }}</p>
+        <p>Type: {{ workout.workoutType }}</p>
+        <p>Date: {{ workout.workoutDateTime | date:'short' }}</p>
+        <p>Duration: {{ workout.duration }}</p>
+        <p>Distance: {{ workout.distance }} miles</p>
+        <p>Effort Level: {{ workout.effortLevel }}</p>
+      </li>
+    </ul>
+  </div>
+  
